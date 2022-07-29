@@ -1,0 +1,17 @@
+<form class="bg-secondary text-white m-5 border p-5 rounded">
+    <div class="form-group my-1">
+        <label>Nombre</label>
+        <input [(ngModel)]="skill.nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese nombre">
+    </div>
+    <div class="form-group my-1">
+        <label>Categoria</label>
+        <input [(ngModel)]="skill.categoria" name="categoria" type="text" class="form-control" placeholder="Ingrese categoria">
+    </div>
+    <div class="form-group my-1">
+        <label>Nivel</label>
+        <input  [(ngModel)]="skill.nivel" name="nivel" class="form-control" placeholder="90">
+    </div>
+    <div class="text-center mt-2">
+        <button class="btn btn-dark btn-lg" (click)="enviar()">Añadir</button>
+    </div>
+</form>

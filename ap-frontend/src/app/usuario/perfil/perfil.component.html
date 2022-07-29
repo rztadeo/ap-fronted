@@ -1,0 +1,7 @@
+<div class="container-fluid p-5 border rounded border-secondary bg-dark bg-opacity-25">
+    <app-personal [idPerfil]="perfil.id" [datos]="perfil.personal" [editable]="editable" (reloadEvent)="reload($event)"></app-personal>
+    <app-academico [idPerfil]="perfil.id" [experiencias]="perfil.estudios" [editable]="editable" (reloadEvent)="reload($event)"></app-academico>
+    <app-laboral [idPerfil]="perfil.id" [experiencias]="perfil.trabajos" [editable]="editable" (reloadEvent)="reload($event)"></app-laboral>
+    <app-skills [idPerfil]="perfil.id" [experiencias]="perfil.skills" [editable]="editable" (reloadEvent)="reload($event)"></app-skills>
+    <app-proyectos [idPerfil]="perfil.id" [experiencias]="perfil.proyectos" [editable]="editable" (reloadEvent)="reload($event)"></app-proyectos>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-10">
+        <p [ngClass]="'h4'">{{exp.entidad}}</p>
+        <p [ngClass]="'h3'">{{exp.nombre}}</p>
+        <p>{{exp.inicio}} - {{exp.fin}}</p>
+    </div>
+    <div class="col-2" *ngIf="editable">
+        <div class="btn-group border round  ed" role="group">
+            <button type="button" class="btn btn-success"> Editar </button>
+            <button type="button" class="btn btn-danger" (click)="borrar()"> Eliminar </button>
+        </div>
+    </div>
+</div>

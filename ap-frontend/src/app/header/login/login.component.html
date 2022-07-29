@@ -1,0 +1,23 @@
+<ng-template #content let-modal>
+    <div class="modal-body">
+        <div class="container-fluid p-3 border rounded border-secondary bg-light w-50 h-100">
+            <div class="container-md bg-secondary container border p-3 mx-auto text-white">
+                <form>
+                    <div class="form-group my-1">
+                        <label>Usuario</label>
+                        <input type="text" name="usuario "class="form-control" [(ngModel)]="sesion.usuario" placeholder="Ingrese usuario">
+                    </div>
+                    <div class="form-group my-1">
+                        <label>Contraseña</label>
+                        <input type="password" name="clave" class="form-control" [(ngModel)]="sesion.clave" placeholder="Ingrese contraseña">
+                    </div>
+
+                    <div class="text-center mt-2">
+                        <button class="btn btn-dark btn-lg" (click)="ingresar()">Acceder</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<button class="btn btn-success" (click)="open(content)">Iniciar sesión</button>

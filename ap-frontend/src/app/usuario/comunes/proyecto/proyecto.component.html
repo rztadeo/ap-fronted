@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-10">
+        <p [ngClass]="'h4'">{{exp.nombre}}</p>
+        <p [ngClass]="'h3'"> {{exp.rol}}</p>
+        <p>{{exp.repositorio}}</p>
+    </div>
+    <div class="col-2" *ngIf="editable">
+        <div class="btn-group border rounded" role="group">
+            <button type="button" class="btn btn-success" onclick="alert('TODO')"> Editar </button><br>
+            <button type="button" class="btn btn-danger" (click)="borrar()"> Eliminar </button>
+        </div>
+    </div>
+</div>

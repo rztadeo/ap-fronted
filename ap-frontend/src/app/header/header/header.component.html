@@ -1,0 +1,24 @@
+<div class="p-0 m-0 w-100 container-fluid-sm sticky-sm-top bg-dark bg-opacity-75">
+<div class="d-flex m-0 py-1 px-1 flex-row-reverse" *ngIf="!this.isLogged; else Logged">
+    <app-login (salidaEvento)="login($event)"></app-login>
+    <app-registro></app-registro>
+</div>
+<ng-template #Logged>
+    <div class="d-flex py-1 px-1 flex-row-reverse">
+        <div ngbDropdown class="btn-group">
+            <button type="button" class="btn btn-lg btn-dark" (click)="viewPerfil()">Mi perfil</button>
+            <button ngbDropdownToggle type="button" class="btn btn-dark btn-lg dropdown-toggle-split" data-bs-toggle="dropdown">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark">
+                <li><button ngbDropdownItem class="dropdown-item" (click)="editPerfil()">Editar perfil</button></li>
+                <li><button ngbDropdownItem class="dropdown-item">Cambiar contraseña</button></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><button ngbDropdownItem class="dropdown-item" href="#">Eliminar cuenta</button></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><button ngbDropdownItem class="dropdown-item" (click)="logout()">Cerrar sesión</button></li>
+            </ul>
+        </div>
+    </div>
+</ng-template>
+</div>

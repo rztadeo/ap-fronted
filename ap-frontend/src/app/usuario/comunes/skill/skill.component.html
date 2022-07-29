@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-10">
+        <p [ngClass]="'h3'">{{exp.nombre}}</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow='this.exp.nivel'
+            aria-valuemin="0" aria-valuemax="100" [style]="'width:'+exp.nivel.toString()+'%'">
+              {{exp.nivel}}
+            </div>
+          </div>
+                 <p>{{exp.categoria}}</p>
+    </div>
+    <div class="col-2" *ngIf="editable">
+        <div class="btn-group border rounded" role="group">
+            <button type="button" class="btn btn-success" onclick="alert('TODO')"> Editar </button>
+            <button type="button" class="btn btn-danger" (click)="borrar()"> Eliminar </button>
+        </div>
+    </div>
+</div>

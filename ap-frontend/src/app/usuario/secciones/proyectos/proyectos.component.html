@@ -1,0 +1,23 @@
+<div class="container my-3 border bg-secondary text-light rounded" *ngIf="editable||(experiencias??[]).length>0">
+
+    <!--Encabezado de la seccion Formacion-->
+    <div class="container my-3">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-10">
+                    <p class="h2">Proyectos</p>
+                </div>
+                <div class="col-2" *ngIf="this.editable">
+                    <button type="button" class="btn btn-dark border mx-2 btn-lg" (click)="open(modal)">Añadir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #modal let-modal>
+        <app-nuevo-proyecto [destino]="'proyectos'" [idPerfil]="idPerfil" (cerrar)="reload($event)"></app-nuevo-proyecto>
+    </ng-template>
+    <div class="container">
+        <app-proyecto *ngFor="let exp of this.experiencias;" (reload)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'proyectos'"></app-proyecto>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<form class="bg-secondary text-white m-5 border p-5 rounded">
+    <div class="form-group my-1">
+        <label>Nombre</label>
+        <input [(ngModel)]="persona.nombre" name="nombre" type="text" class="form-control" placeholder="Nombre">
+    </div>
+    <div class="form-group my-1">
+        <label>Apellido</label>
+        <input [(ngModel)]="persona.apellido" name="apellido" type="text" class="form-control" placeholder="Apellido">
+    </div>
+    <div class="form-group my-1">
+        <label>Edad</label>
+        <input  [(ngModel)]="persona.edad" name="edad" type="number" class="form-control" placeholder="25">
+    </div>
+    <div class="form-group my-1">
+        <label>Descripción</label>
+        <input  [(ngModel)]="persona.bio" name="bio" type="text" class="form-control" placeholder="25">
+    </div>
+    <div class="form-group my-1">
+        <label>Imagen de fondo</label>
+        <input name="background" type="file"accept=".png, .jpg, .jpeg" (change)="this.cargarBg($event)" class="form-control">
+    </div>
+    <div class="text-center mt-2">
+        <button class="btn btn-dark btn-lg" (click)="enviar()" [disabled]="!this.activo">Añadir</button>
+    </div>
+</form>
