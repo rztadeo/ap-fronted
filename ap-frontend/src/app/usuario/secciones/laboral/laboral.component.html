@@ -17,6 +17,6 @@
         <app-nueva-experiencia [destino]="'trabajos'" [idPerfil]="idPerfil" (cerrar)="reload($event)"></app-nueva-experiencia>
     </ng-template>
     <div class="container">
-        <app-experiencia *ngFor="let exp of this.experiencias;"(reload)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'trabajos'"></app-experiencia>
+        <app-experiencia *ngFor="let exp of this.experiencias;"(reloadEvent)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'trabajos'"></app-experiencia>
     </div>
 </div>

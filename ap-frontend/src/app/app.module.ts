@@ -25,6 +25,7 @@ import { NuevaSkillComponent } from './usuario/formularios/nueva-skill/nueva-ski
 import { NuevoProyectoComponent } from './usuario/formularios/nuevo-proyecto/nuevo-proyecto.component';
 import { NuevaPersonaComponent } from './usuario/formularios/nueva-persona/nueva-persona.component';
 import { ProyectoComponent } from './usuario/comunes/proyecto/proyecto.component';
+import { AboutmeComponent } from './inicio/aboutme/aboutme.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProyectoComponent } from './usuario/comunes/proyecto/proyecto.component
     NuevaSkillComponent,
     NuevoProyectoComponent,
     NuevaPersonaComponent,
-    ProyectoComponent
+    ProyectoComponent,
+    AboutmeComponent
   ],
   imports: [
     BrowserModule,

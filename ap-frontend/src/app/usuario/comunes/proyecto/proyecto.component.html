@@ -2,12 +2,15 @@
     <div class="col-10">
         <p [ngClass]="'h4'">{{exp.nombre}}</p>
         <p [ngClass]="'h3'"> {{exp.rol}}</p>
-        <p>{{exp.repositorio}}</p>
+        <a [href]='exp.repositorio' style="color: white;"><p>{{exp.repositorio}}</p></a>
     </div>
     <div class="col-2" *ngIf="editable">
         <div class="btn-group border rounded" role="group">
-            <button type="button" class="btn btn-success" onclick="alert('TODO')"> Editar </button><br>
+            <button type="button" class="btn btn-success" (click)="open(modal)"> Editar </button><br>
             <button type="button" class="btn btn-danger" (click)="borrar()"> Eliminar </button>
         </div>
     </div>
+    <ng-template #modal let-modal>
+        <app-nuevo-proyecto [destino]="this.destino" [idPerfil]="this.exp.usuario" (cerrar)="reload($event)" [proyecto]="exp"></app-nuevo-proyecto>
+    </ng-template>
 </div>

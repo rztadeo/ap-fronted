@@ -18,6 +18,6 @@
         <app-nuevo-proyecto [destino]="'proyectos'" [idPerfil]="idPerfil" (cerrar)="reload($event)"></app-nuevo-proyecto>
     </ng-template>
     <div class="container">
-        <app-proyecto *ngFor="let exp of this.experiencias;" (reload)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'proyectos'"></app-proyecto>
+        <app-proyecto *ngFor="let exp of this.experiencias;" (reloadEvent)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'proyectos'"></app-proyecto>
     </div>
 </div>

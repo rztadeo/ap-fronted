@@ -11,8 +11,11 @@
     </div>
     <div class="col-2" *ngIf="editable">
         <div class="btn-group border rounded" role="group">
-            <button type="button" class="btn btn-success" onclick="alert('TODO')"> Editar </button>
+            <button type="button" class="btn btn-success" (click)="open(modal)"> Editar </button>
             <button type="button" class="btn btn-danger" (click)="borrar()"> Eliminar </button>
         </div>
     </div>
+    <ng-template #modal let-modal>
+        <app-nueva-skill [destino]="this.destino" [idPerfil]="this.exp.usuario" (cerrar)="reload($event)" [skill]="exp"></app-nueva-skill>
+    </ng-template>
 </div>

@@ -10,7 +10,7 @@ import { SkillDTO } from '../../perfil/interfaces';
 })
 export class NuevaSkillComponent implements OnInit {
   @Output() cerrar: EventEmitter<boolean> = new EventEmitter<boolean>();
-  skill: SkillDTO = {} as SkillDTO;
+  @Input() skill: SkillDTO = {} as SkillDTO;
   @Input() destino: string = ""
   @Input() idPerfil: Number = 0;
   constructor(public mensajero: LeerPerfilService) { }

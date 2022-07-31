@@ -1,7 +1,11 @@
-<div class="p-0 m-0 w-100 container-fluid-sm sticky-sm-top bg-dark bg-opacity-75">
+<div class="p-0 m-0 w-100 container-fluid-sm sticky-sm-top bg-dark bg-opacity-75" style="height:58px">
+    <img [src]="'assets/banner.webp'" style="max-height:58px" class="img-fluid float-start">
+
+
 <div class="d-flex m-0 py-1 px-1 flex-row-reverse" *ngIf="!this.isLogged; else Logged">
     <app-login (salidaEvento)="login($event)"></app-login>
     <app-registro></app-registro>
+    <button type="button" class="btn btn-dark" (click)="aboutMe()">Acerca de</button>
 </div>
 <ng-template #Logged>
     <div class="d-flex py-1 px-1 flex-row-reverse">
@@ -12,9 +16,9 @@
             </button>
             <ul ngbDropdownMenu class="dropdown-menu dropdown-menu-dark">
                 <li><button ngbDropdownItem class="dropdown-item" (click)="editPerfil()">Editar perfil</button></li>
-                <li><button ngbDropdownItem class="dropdown-item">Cambiar contraseña</button></li>
+                <li><button ngbDropdownItem class="dropdown-item" (click)="aboutMe()">Acerca de</button></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><button ngbDropdownItem class="dropdown-item" href="#">Eliminar cuenta</button></li>
+                <li><button ngbDropdownItem class="dropdown-item" (click)="deleteProfile()">Eliminar cuenta</button></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><button ngbDropdownItem class="dropdown-item" (click)="logout()">Cerrar sesión</button></li>
             </ul>

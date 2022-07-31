@@ -1,7 +1,6 @@
 <div class="container my-3 border bg-secondary text-light rounded" >
     <!--Encabezado de la seccion Formacion-->
-    <img width="100%" height="200px" [src]="'/assets/fotomia.jpeg'">
-    <img width="160px" height="160px" [src]="'/assets/fotomia.jpeg'" [ngClass]="'float-end'">
+    <img width="100%" height="200px" [src]="setImagen(false)" *ngIf="setImagen(false)!=''">
     <div class="container my-3">
         <div class="row" *ngIf="this.editable">
             <div class="col-10">
@@ -12,19 +11,17 @@
         </div>
         <div *ngFor="let dato of this.datos" class="container">
             <div class="row">
-                <div class="col-10">
+                <div class="col-8">
                     <p class="h1">{{dato.nombre}} {{dato.apellido}}, {{dato.edad}}</p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-10">
                     <p class="h4">{{dato.bio}}</p>
+                </div>
+                <div class="col-4">
+                    <img style="max-height:160px;" *ngIf="setImagen(true)!=''" [src]="setImagen(true)" class="img-thumbnail img-fluid float-end align-top">
                 </div>
             </div>
         </div>
     </div>
     <ng-template #modal let-modal>
-        <app-nueva-persona [destino]="'personas'" [idPerfil]="idPerfil" (cerrar)="close($event)"></app-nueva-persona>
+        <app-nueva-persona [destino]="'personas'" [idPerfil]="idPerfil" (cerrar)="close($event)" [persona]="this.datos[0]"></app-nueva-persona>
     </ng-template>
 </div>

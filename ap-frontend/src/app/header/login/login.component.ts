@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
     this.mensajero.login(this.sesion).subscribe(
       (res: any) => {
         let nuevaClave: string = res.clave;
-
         if (nuevaClave.length > 0) {
           localStorage.setItem("usuario", res.usuario);
           localStorage.setItem("clave", nuevaClave);

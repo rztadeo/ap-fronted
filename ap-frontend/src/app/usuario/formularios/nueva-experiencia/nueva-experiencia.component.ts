@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { finalize } from 'rxjs';
 import { LeerPerfilService } from 'src/app/servicios/leer-perfil.service';
-import { EstudioDTO } from '../../perfil/interfaces';
+import { EstudioDTO, TrabajoDTO } from '../../perfil/interfaces';
 
 @Component({
   selector: 'app-nueva-experiencia',
@@ -10,7 +10,7 @@ import { EstudioDTO } from '../../perfil/interfaces';
 })
 export class NuevaExperienciaComponent implements OnInit {
   @Output() cerrar:EventEmitter<boolean> = new EventEmitter<boolean>();
-  estudio: EstudioDTO = {} as EstudioDTO;
+  @Input() estudio: EstudioDTO | TrabajoDTO= {} as EstudioDTO;
   @Input() destino: string = "";
   @Input() idPerfil: Number = 0;
   constructor(public mensajero: LeerPerfilService) { }

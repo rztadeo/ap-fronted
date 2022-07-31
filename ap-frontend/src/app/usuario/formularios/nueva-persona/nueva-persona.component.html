@@ -9,17 +9,28 @@
     </div>
     <div class="form-group my-1">
         <label>Edad</label>
-        <input  [(ngModel)]="persona.edad" name="edad" type="number" class="form-control" placeholder="25">
+        <input [(ngModel)]="persona.edad" name="edad" type="number" class="form-control" placeholder="25">
     </div>
     <div class="form-group my-1">
         <label>Descripción</label>
-        <input  [(ngModel)]="persona.bio" name="bio" type="text" class="form-control" placeholder="25">
+        <input [(ngModel)]="persona.bio" name="bio" type="text" class="form-control" placeholder="Mi Descripción">
     </div>
     <div class="form-group my-1">
         <label>Imagen de fondo</label>
-        <input name="background" type="file"accept=".png, .jpg, .jpeg" (change)="this.cargarBg($event)" class="form-control">
+        <input name="imagenBg" type="file" accept=".png, .jpg, .jpeg" (change)="this.cargarImg($event, this.readerBg)"
+            class="form-control">
+    </div>
+    <div class="form-group my-1">
+        <label>Imagen de perfil</label>
+        <input name="imagenPerfil" type="file" accept=".png, .jpg, .jpeg" (change)="this.cargarImg($event, this.readerPf)"
+            class="form-control">
     </div>
     <div class="text-center mt-2">
-        <button class="btn btn-dark btn-lg" (click)="enviar()" [disabled]="!this.activo">Añadir</button>
+        <button class="btn btn-dark btn-lg" (click)="enviar()" [disabled]="!this.activo">
+            Añadir
+            <div class="spinner-border" role="status" *ngIf="!this.activo">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+        </button>
     </div>
 </form>

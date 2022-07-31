@@ -9,7 +9,7 @@ import { ProyectoDTO } from '../../perfil/interfaces';
   styleUrls: ['./nuevo-proyecto.component.css']
 })
 export class NuevoProyectoComponent implements OnInit {
-  proyecto: ProyectoDTO = {} as ProyectoDTO;
+  @Input() proyecto: ProyectoDTO = {} as ProyectoDTO;
   @Output() cerrar:EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() destino: string = ""
   @Input() idPerfil: Number = 0;

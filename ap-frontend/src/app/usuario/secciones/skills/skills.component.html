@@ -17,6 +17,6 @@
         <app-nueva-skill [destino]="'skills'" [idPerfil]="idPerfil" (cerrar)="reload($event)"></app-nueva-skill>
     </ng-template>
     <div class="container">
-        <app-skill *ngFor="let exp of this.experiencias;" [exp]="exp" [editable]="editable" [destino]="'skills'"(reload)="reload($event)"></app-skill>
+        <app-skill *ngFor="let exp of this.experiencias;" [exp]="exp" [editable]="editable" [destino]="'skills'"(reloadEvent)="reload($event)"></app-skill>
     </div>
 </div>

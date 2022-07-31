@@ -20,6 +20,6 @@
     </ng-template>
     
     <div class="container">
-        <app-experiencia *ngFor="let exp of this.experiencias;" (reload)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'estudios'"></app-experiencia>
+        <app-experiencia *ngFor="let exp of this.experiencias;" (reloadEvent)="reload($event)" [exp]="exp" [editable]="editable" [destino]="'estudios'"></app-experiencia>
     </div>
 </div>

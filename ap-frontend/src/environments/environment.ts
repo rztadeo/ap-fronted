@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
+   firebaseConfig : {
     apiKey: "AIzaSyDz0gNUbRTtczxUUXqpTF2CYT6mt-UPeyY",
     authDomain: "argentina-programa-310722.firebaseapp.com",
     projectId: "argentina-programa-310722",

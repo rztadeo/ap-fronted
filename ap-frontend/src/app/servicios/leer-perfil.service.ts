@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 })
 
 export class LeerPerfilService {
-  url: string = "http://localhost:8080/"
+  url: string = " https://cryptic-oasis-08352.herokuapp.com/"
   constructor(private http:HttpClient) { }
   
   public traerPerfil(nombre: string){

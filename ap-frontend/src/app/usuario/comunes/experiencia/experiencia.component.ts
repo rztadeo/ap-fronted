@@ -10,21 +10,30 @@ import { EstudioDTO } from '../../perfil/interfaces';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  @Output() reload: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() reloadEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() exp: EstudioDTO = {} as EstudioDTO;
   @Input() editMode: boolean = false; //¿Estoy editando?
   @Input() editable: boolean = false; //¿Se puede editar?
   @Input() destino: string = '';
-  constructor(public mensajero: LeerPerfilService) { }
+  constructor(public mensajero: LeerPerfilService, private modal:NgbModal) { }
 
   ngOnInit(): void {
+  }
+
+  open(contenido: any) {
+    this.modal.open(contenido)
+  }
+
+  reload(dato:boolean){
+    if (dato){this.modal.dismissAll()}
+    this.reloadEvent.emit(dato);
   }
 
   public borrar(): void {
     const options = {next:()=>{},error:()=>{}};
   
     this.mensajero.borrarDatos(this.exp.id, this.destino).pipe(
-      finalize(()=>this.reload.emit(false))
+      finalize(()=>this.reloadEvent.emit(false))
     )
     .subscribe(options);
   }

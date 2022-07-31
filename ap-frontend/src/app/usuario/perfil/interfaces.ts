@@ -1,12 +1,12 @@
 export interface PersonaDTO{
     id: Number,
-    nombre: String,
-    apellido: String,
-    edad: Number,
-    bio: String,
-    usuario:Number,
-    imagenBg: string | null | ArrayBuffer,
-    imagenPerfil: string | null | ArrayBuffer
+    nombre: string| null,
+    apellido: string | null,
+    edad: Number | null,
+    bio: string | null,
+    usuario:Number | null,
+    imagenBg: string,
+    imagenPerfil: string
 };
 
 
