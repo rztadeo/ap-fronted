@@ -57,7 +57,8 @@ export class RegistroComponent implements OnInit {
             } else {
               alert("El nombre de usuario ya se encuentra en uso");
             }
-          }
+          },
+          ()=>{}
         )
       } else {
         alert("Ambas contraseñas deben coincidir");

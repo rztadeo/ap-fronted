@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
 
   open(content: any) {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
-      console.log("aca");
     },
   (reason:any)=>{});
   }
@@ -38,7 +37,8 @@ export class LoginComponent implements OnInit {
         } else {
           alert("Los datos ingresados no son correctos");
         }
-      }
+      },
+      ()=>{}
     )
 
   }

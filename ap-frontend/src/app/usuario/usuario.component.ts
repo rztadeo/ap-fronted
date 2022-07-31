@@ -42,7 +42,8 @@ export class UsuarioComponent implements OnInit {
           } else {
             this.router.navigate(['error']);
           }
-        }
+        },
+        ()=>{}
       )
   }
 
